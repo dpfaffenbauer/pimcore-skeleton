@@ -9,7 +9,8 @@
   "require": {
     "php": ">=7.1",
     "pimcore/pimcore": "dev-master",
-    "coreshop/pimcore-bundle": "^2.0"
+    "coreshop/pimcore-bundle": "^2.0",
+    "w-vision/pimcore-deployer": "^1.1"
   },
   "require-dev": {
     
