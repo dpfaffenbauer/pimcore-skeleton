@@ -9,5 +9,6 @@ class DefaultController extends FrontendController
 {
     public function defaultAction(Request $request)
     {
+        return $this->renderTemplate('Default/default.html.twig');
     }
 }
