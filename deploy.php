@@ -69,6 +69,7 @@ task('deploy', [
     'deploy:yarn:encore:production',
     'deploy:clear_paths',
     'deploy:pimcore:install-classes',
+    'deploy:pimcore:migrate:core',
     'deploy:pimcore:migrate',
     'deploy:symlink',
     'deploy:unlock',

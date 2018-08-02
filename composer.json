@@ -8,9 +8,11 @@
   },
   "require": {
     "php": ">=7.1",
-    "pimcore/pimcore": "dev-master",
+    "pimcore/pimcore": "^5.4.0",
     "coreshop/pimcore-bundle": "^2.0",
-    "w-vision/pimcore-deployer": "^1.1"
+    "coreshop/seo-bundle": "^2.0",
+    "w-vision/pimcore-deployer": "^1.2",
+    "dachcom-digital/toolbox": "^2.6"
   },
   "require-dev": {
     
@@ -19,8 +21,7 @@
     "psr-4": {
       "": ["src/"],
       "Pimcore\\Model\\DataObject\\": "var/classes/DataObject",
-      "Pimcore\\Model\\Object\\": "var/classes/Object",
-      "Website\\": "legacy/website/lib"
+      "Pimcore\\Model\\Object\\": "var/classes/Object"
     },
     "classmap": [
       "app/AppKernel.php"
