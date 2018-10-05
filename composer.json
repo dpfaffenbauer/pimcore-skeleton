@@ -8,7 +8,11 @@
   },
   "require": {
     "php": ">=7.1",
+<<<<<<< HEAD
     "pimcore/pimcore": "^5.4.4",
+=======
+    "pimcore/pimcore": "^5.4.1",
+>>>>>>> 63821daf0a33c1602803729539e1d887190ffd97
     "coreshop/pimcore-bundle": "^2.0",
     "coreshop/seo-bundle": "^2.0",
     "w-vision/pimcore-deployer": "^1.2",
