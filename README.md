@@ -28,7 +28,7 @@ docker-compose exec php bash
 
 **Install Pimcore**
 ```
-bin/console vendor/bin/pimcore-install --admin-username=admin \
+vendor/bin/pimcore-install --admin-username=admin \
                                        --admin-password=admin \
                                        --mysql-host-socket=db \
                                        --mysql-username=pimcore \
