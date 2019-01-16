@@ -8,18 +8,15 @@
   },
   "require": {
     "php": ">=7.1",
-<<<<<<< HEAD
-    "pimcore/pimcore": "^5.4.4",
-=======
-    "pimcore/pimcore": "^5.4.1",
->>>>>>> 63821daf0a33c1602803729539e1d887190ffd97
     "coreshop/pimcore-bundle": "^2.0",
     "coreshop/seo-bundle": "^2.0",
-    "w-vision/pimcore-deployer": "^1.2",
-    "dachcom-digital/toolbox": "^2.6"
+    "dachcom-digital/toolbox": "^2.6",
+    "pimcore/pimcore": "^5.6.0",
+    "symfony/webpack-encore-bundle": "^1.0",
+    "w-vision/pimcore-deployer": "^1.2"
   },
   "require-dev": {
-    
+
   },
   "autoload": {
     "psr-4": {
@@ -32,7 +29,10 @@
     ]
   },
   "scripts": {
-    "post-create-project-cmd": "Pimcore\\Composer::postCreateProject",
+    "post-create-project-cmd": [
+      "Pimcore\\Composer::postCreateProject",
+      "php -r \"copy('.env.example', '.env');\""
+    ],
     "post-install-cmd": [
       "Pimcore\\Composer::postInstall",
       "@symfony-scripts"

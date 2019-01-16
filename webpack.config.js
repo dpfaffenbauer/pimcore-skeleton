@@ -1,6 +1,5 @@
 // webpack.config.js
 var Encore = require('@symfony/webpack-encore');
-let CopyPlugin = require('copy-webpack-plugin');
 var webpack = require('webpack');
 
 Encore
@@ -27,18 +26,16 @@ Encore
     // allow legacy applications to use $/jQuery as a global variable
     .autoProvidejQuery()
 
-    .addPlugin(new CopyPlugin([{
-        from: './assets/images',
-        to: 'images'
-    }, {
-        from: './assets/fonts',
-        to: 'fonts'
-    }], {
-        ignore: [
-            'ico/*',
-            '.dummy'
-        ]
-    }))
+    .copyFiles([
+        {
+            from: './assets/images',
+            to: 'images/[path][name].[ext]',
+        },
+        {
+            from: './assets/fonts',
+            to: 'fonts/[path][name].[ext]',
+        }
+    ])
 
     .addPlugin(new webpack.ProvidePlugin({
         $: 'jquery',
@@ -52,6 +49,7 @@ Encore
             path: 'postcss.config.js'
         };
     })
+    .enableSingleRuntimeChunk()
     .enableSourceMaps(!Encore.isProduction())
     .enableVersioning(Encore.isProduction())
 ;

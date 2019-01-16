@@ -1,6 +1,3 @@
-# remove the following ignores for your project
-/app/constants.php
-
 # symfony default
 /.web-server-pid
 /app/config/parameters.yml
@@ -13,12 +10,6 @@
 !/app/config/local
 /app/config/local/*
 !app/config/local/.gitkeep
-
-# pimcore legacy (remove this for your own development)
-!/legacy
-/legacy/*
-!legacy/.gitkeep
-!legacy/bundle
 
 /var/*
 !/var/.gitkeep
@@ -34,7 +25,6 @@
 /var/config/tag-manager.php
 /var/config/reports.php
 
-
 /web/var/
 /web/sitemap*.xml
 
@@ -42,34 +32,13 @@
 /.php_cs
 /.php_cs.cache
 
-# composer.local.json is referenced in composer-merge-plugin
-# remove this for your projects if you want to track the file
-/composer.local.json
-
 # composer
 /vendor/
 
 # PhpStorm / IDEA
 .idea
-# NetBeans
-nbproject
-
-# codeception (only stage *.dist.yml config files)
-/codeception.yml
-/pimcore/codeception.yml
-/pimcore/tests/*.suite.yml
-/pimcore/tests/_output/*
-/pimcore/tests/_support/_generated/*
 
 # keep legacy paths ignored for easier migration
-/plugins/
-/tools/
-/website/
 .temp
 node_modules/
-install-profiles/
 web/build/
-esign
-importdefinitions.php
-web2print.php
-template/web/build

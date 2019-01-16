@@ -1,0 +1,3 @@
+imports:
+    - { resource: '@PimcoreCoreBundle/Resources/config/pimcore/prod.yml' } # loads default dev configuration
+    - { resource: config.yml }

@@ -13,3 +13,13 @@
 //define('PIMCORE_SYMFONY_DEFAULT_BUNDLE', 'WebsiteDemoBundle');
 //define('PIMCORE_SYMFONY_DEFAULT_CONTROLLER', 'Content');
 //define('PIMCORE_SYMFONY_DEFAULT_ACTION', 'default');
+
+
+use Symfony\Component\Dotenv\Dotenv;
+
+
+// load .env file if available
+$dotEnvFile = PIMCORE_PROJECT_ROOT . '/.env';
+if (file_exists($dotEnvFile)) {
+    (new Dotenv())->load($dotEnvFile);
+}
