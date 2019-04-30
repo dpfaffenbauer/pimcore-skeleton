@@ -13,7 +13,7 @@ This Skeleton comes pre-installed with following features:
 
 **Create a new Project**
 ```
-composer create-project dpfaffenbauer/pimcore-skeleton:5.4
+composer create-project dpfaffenbauer/pimcore-skeleton:5.7
 ```
 
 **Start docker**
