@@ -6,7 +6,6 @@ services:
         working_dir: /application
         command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci, --innodb-file-format=Barracuda, --innodb_large_prefix=1]
         volumes:
-            - .:/var/lib/mysql
             - pimcore-database:/var/lib/mysql
         environment:
             - MYSQL_ROOT_PASSWORD=ROOT
