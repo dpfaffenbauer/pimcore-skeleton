@@ -43,7 +43,7 @@ services:
 
     mailhog:
         image: mailhog/mailhog:latest
-        container_name: coreshop-mailhog
+        container_name: pimcore-mailhog
         environment:
             - MH_STORAGE=maildir
         volumes:

@@ -8,10 +8,11 @@
   },
   "require": {
     "php": ">=7.1",
-    "coreshop/pimcore-bundle": "^2.0",
-    "coreshop/seo-bundle": "^2.0",
-    "dachcom-digital/toolbox": "^2.7",
-    "pimcore/pimcore": "^5.7.0",
+    "coreshop/pimcore-bundle": "^2.1",
+    "coreshop/seo-bundle": "^2.1",
+    "dachcom-digital/toolbox": "^3",
+    "pimcore/pimcore": "~6.0.0",
+    "symfony/symfony": "^4.3.0",
     "symfony/webpack-encore-bundle": "^1.0",
     "w-vision/pimcore-deployer": "^1.2"
   },
@@ -21,34 +22,25 @@
   "autoload": {
     "psr-4": {
       "": ["src/"],
-      "Pimcore\\Model\\DataObject\\": "var/classes/DataObject",
-      "Pimcore\\Model\\Object\\": "var/classes/Object"
+      "Pimcore\\Model\\DataObject\\": "var/classes/DataObject"
     },
     "classmap": [
       "app/AppKernel.php"
     ]
   },
   "scripts": {
-    "post-create-project-cmd": [
-      "Pimcore\\Composer::postCreateProject",
-      "php -r \"copy('.env.example', '.env');\""
-    ],
+    "post-create-project-cmd": "Pimcore\\Composer::postCreateProject",
     "post-install-cmd": [
       "Pimcore\\Composer::postInstall",
-      "@symfony-scripts"
+      "@pimcore-scripts"
     ],
     "post-update-cmd": [
       "Pimcore\\Composer::postUpdate",
-      "@symfony-scripts"
+      "@pimcore-scripts"
     ],
-    "pre-package-update": [
-      "Pimcore\\Composer::prePackageUpdate"
-    ],
-    "symfony-scripts": [
-      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
+    "pimcore-scripts": [
+      "Pimcore\\Composer::clearCache",
+      "Pimcore\\Composer::installAssets"
     ]
   },
   "extra": {
