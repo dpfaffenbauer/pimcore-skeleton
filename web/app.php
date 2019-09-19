@@ -19,19 +19,13 @@ use Symfony\Component\HttpFoundation\Request;
 include __DIR__ . "/../vendor/autoload.php";
 
 \Pimcore\Bootstrap::setProjectRoot();
-\Pimcore\Bootstrap::boostrap();
+\Pimcore\Bootstrap::bootstrap();
 
 $request = Request::createFromGlobals();
 
 // set current request as property on tool as there's no
 // request stack available yet
 Tool::setCurrentRequest($request);
-
-// redirect to installer if pimcore is not installed
-if (!is_file(\Pimcore\Config::locateConfigFile('system.php'))) {
-    Debug::enable(E_ALL, true);
-    throw new RuntimeException('Pimcore is not installed! Please install via command line.');
-}
 
 /** @var \Pimcore\Kernel $kernel */
 $kernel = \Pimcore\Bootstrap::kernel();
